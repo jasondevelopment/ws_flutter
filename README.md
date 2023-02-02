@@ -4,13 +4,7 @@
 
 一套企业级移动端 Flutter 组件库
 
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.baidu.com)
-
-</div>
-
-<div align="center">
-
-简体中文
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jasondevelopment/ws_flutter/blob/main/LICENSE)
 
 </div>
 
@@ -20,7 +14,6 @@
 
 - 提炼自企业级移动端产品的交互和视觉风格
 - 开箱即用的高质量 Flutter 组件
-- 提供满足业务差异的主题定制能力
 - 设计工具赋能开发全链路
 
 ### Demo 下载
@@ -29,16 +22,9 @@
 ## 适配 Flutter 版本
 
 
-
 | WS_Flutter 版本 | Flutter SDK 版本 |
 |---------------| ---------------- |
-| 1.0.0         | 1.22.4           |
-| 2.0.0         | 2.2.2            |
-| 2.1.1 (支持空安全) | 2.2.2            |
-| 2.2.0         | 2.10.5 |
-| 3.0.0         | 3.0.3 |
-| 3.1.0         | 3.3.0 |
-| 3.2.0         | 3.3.0 |
+| 3.2.0         | 3.3.0           |
 
 
 
@@ -72,7 +58,6 @@ CenterDialog.showCenterDialog(
 
 WS_Flutter 作为整套标准组件，参考和引用部分开源库如下：
 
-- [bruno](https://github.com/LianjiaTech/bruno)
 - [flutter_gifimage](https://github.com/peng8350/flutter_gifimage)
 - [expansion_tile_card.dart](https://gist.github.com/Skylled/7ac0f2f99881f7df2a0a850e60ef2df0)
 - [photo_view](https://github.com/bluefireteam/photo_view)
@@ -81,6 +66,7 @@ WS_Flutter 作为整套标准组件，参考和引用部分开源库如下：
 - [lpinyin](https://github.com/flutterchina/lpinyin)
 - [azlistview](https://github.com/flutterchina/azlistview)
 - [flutter_path_drawing](https://github.com/dnfield/flutter_path_drawing)
+- [bruno](https://github.com/LianjiaTech/bruno)
 
 
 感谢以上开源库的团队及作者
