@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  fluttertoast: ^8.0.9 #吐司
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
