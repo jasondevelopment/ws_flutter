@@ -6,19 +6,19 @@ import '../../utils/ws_colors.dart';
 final ButtonStyle _buttonOutlineStyle = ElevatedButton.styleFrom(
   elevation: 0,
   backgroundColor: Colors.white,
-  foregroundColor: Colors_WS.blue,
+  foregroundColor: ColorsWS.blue,
   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
   shape:
       RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.circular(8)),
   side: const BorderSide(
-    color: Colors_WS.blue,
+    color: ColorsWS.blue,
   ),
 );
 
 //确认类型按钮的样式
 final ButtonStyle _buttonElevatedStyle = ElevatedButton.styleFrom(
   elevation: 0,
-  backgroundColor: Colors_WS.blue,
+  backgroundColor: ColorsWS.blue,
   foregroundColor: Colors.white,
   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
   shape:
@@ -28,7 +28,7 @@ final ButtonStyle _buttonElevatedStyle = ElevatedButton.styleFrom(
 //单按钮的样式
 final ButtonStyle _singleButtonStyle = ElevatedButton.styleFrom(
   elevation: 0,
-  backgroundColor: Colors_WS.blue,
+  backgroundColor: ColorsWS.blue,
   foregroundColor: Colors.white,
   fixedSize: const Size(160, 48),
   shape:
@@ -46,8 +46,8 @@ final ButtonStyle _cameraButtonStyle = TextButton.styleFrom(
 );
 
 //dialog类型
-const int DIALOG_TYPE_NORMAL = 0; //普通型dialog
-const int DIALOG_TYPE_INPUT = 1; //输入型dialog
+const int dialogTypeNormal = 0; //普通型dialog
+const int dialogTypeInput = 1; //输入型dialog
 
 //构建底部按钮
 Widget _buildBottomButton(
@@ -66,11 +66,11 @@ Widget _buildBottomButton(
           OutlinedButton(
             onPressed: () {
               //普通弹窗取消按钮点击监听的回调
-              if (onButtonPressed != null && type == DIALOG_TYPE_NORMAL) {
+              if (onButtonPressed != null && type == dialogTypeNormal) {
                 onButtonPressed(false);
               }
               //输入弹窗取消按钮点击监听的回调
-              if (onButtonPressed != null && type == DIALOG_TYPE_INPUT) {
+              if (onButtonPressed != null && type == dialogTypeInput) {
                 onButtonPressed('');
               }
               //关闭弹窗
@@ -92,13 +92,13 @@ Widget _buildBottomButton(
           ElevatedButton(
               onPressed: () {
                 //普通弹窗确认按钮点击监听的回调
-                if (onButtonPressed != null && type == DIALOG_TYPE_NORMAL) {
+                if (onButtonPressed != null && type == dialogTypeNormal) {
                   onButtonPressed(true);
                   Navigator.pop(context);
                 }
                 //输入弹窗确认按钮点击监听的回调
                 if (onButtonPressed != null &&
-                    type == DIALOG_TYPE_INPUT &&
+                    type == dialogTypeInput &&
                     controller!.text.isNotEmpty) {
                   onButtonPressed(controller.text);
                   Navigator.pop(context);
@@ -141,16 +141,16 @@ Widget _buildBottomDialogButton(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   elevation: 0,
                   backgroundColor: Colors.white,
-                  foregroundColor: Colors_WS.blue,
+                  foregroundColor: ColorsWS.blue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadiusDirectional.circular(8)),
                   side: const BorderSide(
-                    color: Colors_WS.blue,
+                    color: ColorsWS.blue,
                   ),
                 ),
                 child: const Text(
                   '取消',
-                  style: TextStyle(fontSize: 18, color: Colors_WS.blue),
+                  style: TextStyle(fontSize: 18, color: ColorsWS.blue),
                 ))),
         const SizedBox(
           width: 23,
@@ -165,7 +165,7 @@ Widget _buildBottomDialogButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusDirectional.circular(8)),
                 elevation: 0,
-                backgroundColor: Colors_WS.blue,
+                backgroundColor: ColorsWS.blue,
                 foregroundColor: Colors.white,
               ),
               child: const Text(
@@ -243,7 +243,7 @@ class CenterDialog extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                     decoration: TextDecoration.none,
-                    color: Colors_WS.text333),
+                    color: ColorsWS.text333),
               ),
             if (title != null) const SizedBox(height: 32),
             //显示内容
@@ -251,7 +251,7 @@ class CenterDialog extends StatelessWidget {
               message,
               style: const TextStyle(
                   fontSize: 16,
-                  color: Colors_WS.text333,
+                  color: ColorsWS.text333,
                   decoration: TextDecoration.none,
                   fontWeight: FontWeight.normal),
             ),
@@ -260,7 +260,7 @@ class CenterDialog extends StatelessWidget {
             ),
             //显示底部按钮
             _buildBottomButton(context, positiveButtonText, negativeButtonText,
-                onButtonPressed, DIALOG_TYPE_NORMAL, null)
+                onButtonPressed, dialogTypeNormal, null)
           ],
         ),
       ),
@@ -312,7 +312,7 @@ class CenterInputDialog extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12),
         //设置圆角背景
         decoration: BoxDecoration(
-            color: Colors_WS.backGround,
+            color: ColorsWS.backGround,
             borderRadius: BorderRadius.circular(8)),
         child: TextField(
           focusNode: focusNode,
@@ -324,7 +324,7 @@ class CenterInputDialog extends StatelessWidget {
               hintText: hintText,
               hintMaxLines: 100,
               border: InputBorder.none),
-          style: const TextStyle(fontSize: 16, color: Colors_WS.text333),
+          style: const TextStyle(fontSize: 16, color: ColorsWS.text333),
         ),
       );
 
@@ -358,7 +358,7 @@ class CenterInputDialog extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                       decoration: TextDecoration.none,
-                      color: Colors_WS.text333),
+                      color: ColorsWS.text333),
                 ),
                 const SizedBox(
                   height: 16,
@@ -374,7 +374,7 @@ class CenterInputDialog extends StatelessWidget {
                     positiveButtonText,
                     negativeButtonText,
                     onButtonPressed,
-                    DIALOG_TYPE_INPUT,
+                    dialogTypeInput,
                     controller)
               ],
             ),
@@ -442,12 +442,12 @@ class TakePhotoDialog extends StatelessWidget {
                         '拍照',
                         style: TextStyle(
                             fontSize: 16,
-                            color: Colors_WS.text333,
+                            color: ColorsWS.text333,
                             fontWeight: FontWeight.normal),
                       ),
                     ),
                     Container(
-                      color: Colors_WS.line2,
+                      color: ColorsWS.line2,
                       height: 0.5,
                       child: null,
                     ),
@@ -461,12 +461,12 @@ class TakePhotoDialog extends StatelessWidget {
                         '从相册中选择',
                         style: TextStyle(
                             fontSize: 16,
-                            color: Colors_WS.text333,
+                            color: ColorsWS.text333,
                             fontWeight: FontWeight.normal),
                       ),
                     ),
                     Container(
-                      color: Colors_WS.line2,
+                      color: ColorsWS.line2,
                       height: 12,
                       child: null,
                     ),
@@ -479,7 +479,7 @@ class TakePhotoDialog extends StatelessWidget {
                         '取消',
                         style: TextStyle(
                             fontSize: 16,
-                            color: Colors_WS.text333,
+                            color: ColorsWS.text333,
                             fontWeight: FontWeight.normal),
                       ),
                     ),
@@ -532,9 +532,9 @@ class _BottomMenuDialogState extends State<BottomMenuDialog>
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       int defShowIndex = 0;
       if (widget.menuTextList.length % 2 == 0) {
-        defShowIndex = (widget.menuTextList.length / 2).toInt();
+        defShowIndex = widget.menuTextList.length ~/ 2;
       } else {
-        defShowIndex = ((widget.menuTextList.length + 1) / 2).toInt();
+        defShowIndex = (widget.menuTextList.length + 1) ~/ 2;
       }
       controller.jumpToItem(defShowIndex);
     });
@@ -571,7 +571,7 @@ class _BottomMenuDialogState extends State<BottomMenuDialog>
               (text) => Center(
                 child: Text(
                   text,
-                  style: const TextStyle(fontSize: 16, color: Colors_WS.blue),
+                  style: const TextStyle(fontSize: 16, color: ColorsWS.blue),
                 ),
               ),
             )
@@ -612,7 +612,7 @@ class _BottomMenuDialogState extends State<BottomMenuDialog>
                       child: Text(
                         widget.title,
                         style: const TextStyle(
-                            color: Colors_WS.text333,
+                            color: ColorsWS.text333,
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
@@ -709,7 +709,7 @@ class _BottomPickerDateDialogState extends State<BottomPickerDateDialog>
               (text) => Center(
                 child: Text(
                   text,
-                  style: const TextStyle(fontSize: 16, color: Colors_WS.blue),
+                  style: const TextStyle(fontSize: 16, color: ColorsWS.blue),
                 ),
               ),
             )
@@ -850,7 +850,7 @@ class _BottomPickerDateDialogState extends State<BottomPickerDateDialog>
                       child: Text(
                         widget.title ?? '选择日期',
                         style: const TextStyle(
-                            color: Colors_WS.text333,
+                            color: ColorsWS.text333,
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),

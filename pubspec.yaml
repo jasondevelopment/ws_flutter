@@ -1,6 +1,6 @@
 name: ws_flutter
 description: An enterprise-class package of Flutter components for mobile applications.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/jasondevelopment/ws_flutter
 
 environment:
@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  fluttertoast: ^8.0.9 #吐司
 
 dev_dependencies:
   flutter_test:
