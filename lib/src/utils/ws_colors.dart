@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Colors_WS {
+class ColorsWS {
   static const navigationColor = Color(0x33333333);
   static const backGround = Color(0xFFF5F6FA);
   static const text333 = Color(0xFF333333);
