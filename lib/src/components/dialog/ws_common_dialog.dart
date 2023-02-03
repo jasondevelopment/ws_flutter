@@ -46,8 +46,8 @@ final ButtonStyle _cameraButtonStyle = TextButton.styleFrom(
 );
 
 //dialog类型
-const int dialog_type_normal = 0; //普通型dialog
-const int dialog_type_input = 1; //输入型dialog
+const int dialogTypeNormal = 0; //普通型dialog
+const int dialogTypeInput = 1; //输入型dialog
 
 //构建底部按钮
 Widget _buildBottomButton(
@@ -66,11 +66,11 @@ Widget _buildBottomButton(
           OutlinedButton(
             onPressed: () {
               //普通弹窗取消按钮点击监听的回调
-              if (onButtonPressed != null && type == dialog_type_normal) {
+              if (onButtonPressed != null && type == dialogTypeNormal) {
                 onButtonPressed(false);
               }
               //输入弹窗取消按钮点击监听的回调
-              if (onButtonPressed != null && type == dialog_type_input) {
+              if (onButtonPressed != null && type == dialogTypeInput) {
                 onButtonPressed('');
               }
               //关闭弹窗
@@ -92,13 +92,13 @@ Widget _buildBottomButton(
           ElevatedButton(
               onPressed: () {
                 //普通弹窗确认按钮点击监听的回调
-                if (onButtonPressed != null && type == dialog_type_normal) {
+                if (onButtonPressed != null && type == dialogTypeNormal) {
                   onButtonPressed(true);
                   Navigator.pop(context);
                 }
                 //输入弹窗确认按钮点击监听的回调
                 if (onButtonPressed != null &&
-                    type == dialog_type_input &&
+                    type == dialogTypeInput &&
                     controller!.text.isNotEmpty) {
                   onButtonPressed(controller.text);
                   Navigator.pop(context);
@@ -260,7 +260,7 @@ class CenterDialog extends StatelessWidget {
             ),
             //显示底部按钮
             _buildBottomButton(context, positiveButtonText, negativeButtonText,
-                onButtonPressed, dialog_type_normal, null)
+                onButtonPressed, dialogTypeNormal, null)
           ],
         ),
       ),
@@ -374,7 +374,7 @@ class CenterInputDialog extends StatelessWidget {
                     positiveButtonText,
                     negativeButtonText,
                     onButtonPressed,
-                    dialog_type_input,
+                    dialogTypeInput,
                     controller)
               ],
             ),
